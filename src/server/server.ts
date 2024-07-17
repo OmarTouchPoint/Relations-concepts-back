@@ -3,7 +3,7 @@ import 'dotenv/config'
 import express from 'express';
 import { dbConnection } from '../database/config';
 import {router as pageInfoRouter}  from "../routers/pageInfo"
-import {cors} from "cors";
+import cors from "cors";
 
 interface Options {
     port: number
