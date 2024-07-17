@@ -3,6 +3,7 @@ import 'dotenv/config'
 import express from 'express';
 import { dbConnection } from '../database/config';
 import {router as pageInfoRouter}  from "../routers/pageInfo"
+import {cors} from "cors";
 
 interface Options {
     port: number
@@ -46,7 +47,7 @@ export class Server {
 
 
         this.app.use( express.json() );
-
+        this.app.use( cors() )
         this.app.use( express.urlencoded({ extended: true }) ); // x-www-form-urlencoded
         
     }
